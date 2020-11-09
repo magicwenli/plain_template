@@ -26,20 +26,18 @@
 
 \newtoks\StudentNumber       %学号
 \newtoks\miji            %密级
-\newtoks\Cmajor          %学科专业中文名
+\newtoks\Cclass          %学科专业中文名
 \newtoks\Emajor          %学科专业英文名
 \newtoks\Edate           %英文日期
 \newtoks\Etitle          %英文题目
 \newtoks\Eauthor         %作者英文名
 \newtoks\Esupervisor     %指导教师英文名
-\newtoks\Csupervisor     %指导教师中文名
+\newtoks\Csupervisor     %指导教师中文名  % 改为学生姓名
 \newtoks\Eschoolname      %学院英文名
 \newtoks\Cschoolname      %学院中文名
 \newtoks\Ccoursename          %课程名称
 \newtoks\CsupervisorAnother        %指导教师二
 \newtoks\CstudentNum			%学生学号
-
-
 
 
 \pagestyle{fancyplain}
@@ -51,9 +49,13 @@
 \fancypagestyle{plain}
 {
 \fancyhead{}                                    % clear all header fields
-\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[C]{\zihao{5}\usefonttimes{\the\Ccoursename}}
+
 \fancyfoot{}                                    % clear all footer fields
-\fancyfoot[C]{\zihao{5}\usefonttimes{-\,\thepage\,-}}
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[L]{\zihao{5}\usefonttimes{\@date}}
+\fancyfoot[R]{\zihao{5}\usefonttimes{-\,\thepage\,-}}
 }
 
 %%=====封面===================== 
@@ -62,37 +64,29 @@
   \thispagestyle{empty}%
   %\vspace*{-2cm}
   \begin{center}\leavevmode
-    {\heiti \zihao{5}%
-    \begin{tabular}{p{9cm}lp{3cm}l}
-%  & \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{学\hfill 号}} & {}\hfill\raisebox{-0.5ex}[0pt]{\the\StudentNumber}\hfill{} & \\ \cline{3-3}
-%  & \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{密\hfill 级}} & {}\hfill\raisebox{-0.5ex}[0pt]{\the\miji}\hfill{}   & \\ \cline{3-3}
-    \end{tabular}
+    {\kaishu \zihao{4}%
+    \leftline{\raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{西安交通大学}}}
     }
     \par
-    \vspace*{0.9cm} %插入空白
-    {\songti \zihao{1} \makebox[9cm][s]{武汉大学计算机学院}}\\
-	\vspace{0.8cm}
-	{\songti \zihao{1} \makebox[9cm][s]{本科生课程设计报告}}\\
+    \vspace*{3cm} %插入空白
+    {\kaishu \zihao{-0}\the\Ccoursename}\\
     \vspace{2.0cm}
-    {\heiti \zihao{2} \@title \par}%
+%    {\heiti \zihao{2} \@title \par}%
 %    \vspace{4.2cm}
-     \vfill\vfill\vfill
-    {\songti\zihao{-3}
+     \vfill\vfill
+    {\songti\zihao{3}
     \begin{tabular}{cp{3cm}c}
-      \raisebox{-3ex}[0pt]{\makebox[3.5cm][s]{专\hfill 业\hfill 名\hfill 称:}} & { {}\raisebox{-3ex}[0pt]{\the\Cmajor}\hfill{}} & \\[3ex]
-      \raisebox{-3ex}[0pt]{\makebox[3.5cm][s]{课\hfill 程\hfill 名\hfill 称:}} & {  {}\raisebox{-3ex}[0pt]{\the\Ccoursename}\hfill{}} & \\[3ex]
-	  \raisebox{-3ex}[0pt]{\makebox[3.5cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 一:}} & { {}\raisebox{-3ex}[0pt]{\the\Csupervisor}\hfill{}} & \\[3ex]
-	  \raisebox{-3ex}[0pt]{\makebox[3.5cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 二:}} & { {}\raisebox{-3ex}[0pt]{\the\CsupervisorAnother}\hfill{}} & \\[3ex]
-	  \raisebox{-3ex}[0pt]{\makebox[3.5cm][s]{学\hfill 生\hfill 学\hfill 号:}} & { {}\raisebox{-3ex}[0pt]{\the\CstudentNum}\hfill{}} & \\[3ex]
-	  \raisebox{-3ex}[0pt]{\makebox[3.5cm][s]{学\hfill 生\hfill 姓\hfill 名:}} & { {}\raisebox{-3ex}[0pt]{\@author}\hfill{}} & \\[3ex]
+      \raisebox{-3ex}[0pt]{\makebox[2cm][s]{班级:}} & { {}\raisebox{-3ex}[0pt]{{\underline{\makebox[5cm][c]{\the\Cclass}}}}\hfill{}} & \\[3ex]
+      \raisebox{-3ex}[0pt]{\makebox[2cm][s]{学号:}} & { {}\raisebox{-3ex}[0pt]{{\underline{\makebox[5cm][c]{\the\CstudentNum}}}}\hfill{}} & \\[3ex]
+      \raisebox{-3ex}[0pt]{\makebox[2cm][s]{姓名:}} & { {}\raisebox{-3ex}[0pt]{{\underline{\makebox[5cm][c]{\the\Csupervisor}}}}\hfill{}} & \\[3ex]
      \end{tabular}
     }
     \par
-    \vspace{2.6cm}
+    \vspace{1cm}
     {
     {\songti \zihao{3} \@date \par}%
     }
-    %\vspace*{-0.7cm}
+    \vspace*{0.7cm}
   \end{center}%
 %  \null
 %   \cleardoublepage
@@ -229,6 +223,9 @@
 \newcommand\acknowledgement{\chapter*{\ziju{2}结论}}
 
 %%% ---- 章节标题设置 ----- %%%%
+
+\renewcommand\thesubsubsection{\arabic{subsubsection}}
+
 \ctexset{chapter={format+={\zihao{-2}\usefonttimes},%
                number={\arabic{chapter}},name={,},afterskip={0.5\baselineskip},beforeskip={0.8\baselineskip}}}      %\zihao{-2}
 \ctexset{section={format+={\zihao{4}\raggedright\usefonttimes},afterskip={0.5\baselineskip},beforeskip={0.5\baselineskip}}}
@@ -236,7 +233,7 @@
 \ctexset{subsubsection={format={\zihao{-4}\bf\raggedright\usefonttimes},afterskip={0.5\baselineskip},beforeskip={0.5\baselineskip}}}
 
 \setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{2}
 
 %%% ---- 图表标题设置 ----- %%%%
 \RequirePackage[labelsep=quad]{caption} %% 序号之后空一格写标题

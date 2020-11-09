@@ -1,7 +1,3 @@
-*.png
-*.aux
-*.log
-*.out
-*.synctex.gz
-*.thm
-*.toc
+.DS_Store
+*.pdf
+Experiment-template.tex
