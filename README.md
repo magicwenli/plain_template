@@ -22,6 +22,4 @@
   请直接在这些文件中填写相关内容,不要改变文件的位置.
 - 更多使用说明请参看 源文件 Experiment-template.tex 里的注释说明.
 
-
-
-![image-20201109133011332](../assets/img/README/image-20201109133011332.png)
+![image-20201109133011332](figures/image-20201109133011332.png)
