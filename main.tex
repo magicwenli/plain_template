@@ -1,10 +1,10 @@
 % !Mode:: "TeX:UTF-8"
 %% 请使用 XeLaTeX 编译本文.
 % \documentclass{WHUBachelor}% 选项 forprint: 交付打印时添加, 避免彩色链接字迹打印偏淡. 即使用下一行:
- \documentclass[forprint]{WHUBachelor}
+ \documentclass[forprint]{plainAssign}
 %---------------------这里添加所需的package--------------------------------
 \usepackage{url}
-
+\usepackage{fontspec}
 %--------------------------------------------------------------------------
 \makeatletter
 \def\BState{\State\hskip-\ALG@thistlm}
@@ -16,13 +16,13 @@
 
 \Ccoursename{操作系统专题实验报告} %课程名称
 \title{yet another template} % useless
-%\author{杨雪念} 
-\Csupervisor{杨雪念} % 学生姓名
+%\author{ } % 用不了
+\Csupervisor{you-know-who} % 学生姓名
 %\CsupervisorAnother{无} %指导教师二姓名、职称
-\CstudentNum{2160901020} %学号
-\Cclass{计算机82班} % 专业名称
+\CstudentNum{xxx} %学号
+\Cclass{xxx} % 专业名称
 %\Cschoolname{计算机学院} % 学院名
-\date{2020年11月15日} % 日期
+\date{\today} % 日期
 
 %-----------------------------------------------------------------------------
 
@@ -36,8 +36,8 @@
 
 
 \tableofcontents
-\thispagestyle{empty}				%不显示罗马数字 ——zmx更新于2019.06.18
-\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\thispagestyle{empty}				%不显示罗马数字 ——zmx更新于2019.06.18
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
 
 
 
@@ -56,13 +56,41 @@
 \chapter{openEuler系统环境实验}
  
  \section{实验目的}
+\begin{itemize}
+	\item 了解openEuler操作系统的基本信息;
+	\item 了解基于Kunpeng架构的openEuler操作系统开发环境. 
+\end{itemize}
 
  \section{实验内容}
+ 本实验通过运行shell命令查看系统信息以达到了解openEuler操作系统的目的。另外运行简单的C程序和汇编程序以了解基于ARMv8-64的开发环境。
+ 
+ 主要包含以下的内容：
+ \begin{enumerate}
+ 	\item 查看系统信息;
+ 	\item 测试编程环境;
+ 	\item 查看ARMv8-64汇编指令；
+ 	\item 编译和运行汇编程序；
+ \end{enumerate}
 
  \section{实验思想}
-
+按步骤一步步实验, 理解体会不同CPU架构下, 不同指令集在Linux系统编译产生的区别. 
  \section{实验步骤}
+ \subsection{查看系统信息}
+ \begin{enumerate}[step.1]
+ 	\item 查看总体架构 \\ 
+ 	\item 
+ \end{enumerate}
+ 
+ \subsection{测试编程环境}
 
+ \subsection{查看ARMv8-64汇编指令}
+ 
+ \subsection{编译和运行汇编程序}
+ 
+  \begin{enumerate}[step.1]
+ 	\item 
+  \end{enumerate}
+ 
  \section{测试数据设计}
  
  \section{程序运行初值及运行结果分析}

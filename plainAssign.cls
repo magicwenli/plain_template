@@ -1,6 +1,7 @@
 % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{WHUBachelor}[2016/05/31 4.0 Wuhan University Thesis Template for Bachelor Degree]
+% modified from WHUBachelor
+\ProvidesClass{plainAssign}[2020/11/01 1.0 Assignmen Template]
 \LoadClass[zihao=-4,a4paper,oneside]{ctexbook}
 %\setmainfont{Times New Roman}
 
@@ -224,7 +225,7 @@
 
 %%% ---- 章节标题设置 ----- %%%%
 
-\renewcommand\thesubsubsection{\arabic{subsubsection}}
+%\renewcommand\thesubsubsection{\arabic{subsubsection}}
 
 \ctexset{chapter={format+={\zihao{-2}\usefonttimes},%
                number={\arabic{chapter}},name={,},afterskip={0.5\baselineskip},beforeskip={0.8\baselineskip}}}      %\zihao{-2}
@@ -233,7 +234,7 @@
 \ctexset{subsubsection={format={\zihao{-4}\bf\raggedright\usefonttimes},afterskip={0.5\baselineskip},beforeskip={0.5\baselineskip}}}
 
 \setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 
 %%% ---- 图表标题设置 ----- %%%%
 \RequirePackage[labelsep=quad]{caption} %% 序号之后空一格写标题
